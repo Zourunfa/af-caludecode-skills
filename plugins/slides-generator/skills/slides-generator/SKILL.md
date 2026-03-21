@@ -1,6 +1,6 @@
 ---
 name: slides-generator
-description: Generate interactive presentation slides using React + Tailwind CSS. Trigger keywords: "slides", "presentation", "PPT", "ppt", "demo", "benchmark", "deck", "slideshow"
+description: Generate interactive presentation slides using React + Tailwind CSS. Trigger keywords: "slides", "presentation", "PPT", "ppt", "demo", "benchmark", "deck", "slideshow", "演讲稿", "演示文稿", "幻灯片"
 ---
 
 # Generate Presentation Slides
