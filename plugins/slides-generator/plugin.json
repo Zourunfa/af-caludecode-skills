@@ -1,0 +1,64 @@
+{
+  "name": "slides-generator",
+  "version": "1.0.0",
+  "description": "Generate interactive presentation slides using React + Tailwind CSS. Create beautiful, responsive presentations with animations and keyboard navigation.",
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/<your-username>/af-claudecode-skill/tree/main/plugins/slides-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<your-username>/af-claudecode-skill.git",
+    "directory": "plugins/slides-generator"
+  },
+  "keywords": [
+    "slides",
+    "presentation",
+    "react",
+    "tailwind",
+    "vite",
+    "ppt",
+    "demo",
+    "benchmark",
+    "interactive"
+  ],
+  "categories": [
+    "development",
+    "templates",
+    "ui"
+  ],
+  "components": {
+    "skills": [
+      "skills/*.md"
+    ],
+    "commands": [
+      "commands/*.md"
+    ],
+    "templates": [
+      "templates/**/*"
+    ]
+  },
+  "triggers": {
+    "keywords": [
+      "slides",
+      "presentation",
+      "PPT",
+      "ppt",
+      "demo",
+      "benchmark",
+      "deck",
+      "slideshow"
+    ]
+  },
+  "config": {
+    "outputDirectory": "generated-slides",
+    "themes": ["modern", "minimalist", "dark", "colorful"],
+    "defaultSlides": 5,
+    "defaultTheme": "modern"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "claude": {
+    "minVersion": "1.0.0",
+    "capabilities": ["file-write", "command-exec"]
+  }
+}
