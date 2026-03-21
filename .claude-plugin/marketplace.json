@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "af-caludecode-skills",
+  "description": "Claude Code 技能与插件市场 - 提供 slides-generator 等实用插件",
+  "owner": {
+    "name": "Zourunfa",
+    "email": "a1804491927@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "slides-generator",
+      "description": "Generate interactive presentation slides using React + Tailwind CSS. Triggers on keywords like slides, presentation, PPT, demo, benchmark.",
+      "category": "development",
+      "source": "./plugins/slides-generator",
+      "homepage": "https://github.com/Zourunfa/af-caludecode-skills"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "marketplace": {
+    "name": "af-claudecode-skill",
+    "version": "1.0.0",
+    "description": "Claude Code Skills & Plugins Marketplace",
+    "repository": "https://github.com/Zourunfa/af-claudecode-skill",
+    "plugins": [
+      {
+        "name": "slides-generator",
+        "version": "1.0.0",
+        "path": "plugins/slides-generator",
+        "description": "Generate interactive presentation slides using React + Tailwind CSS",
+        "keywords": ["slides", "presentation", "react", "tailwind", "ppt"],
+        "homepage": "plugins/slides-generator/README.md"
+      }
+    ]
+  },
+  "categories": {
+    "development": ["slides-generator"],
+    "templates": ["slides-generator"],
+    "ui": ["slides-generator"]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "slides-generator",
+  "description": "Generate interactive presentation slides using React + Tailwind CSS",
+  "version": "1.0.0",
+  "author": {
+    "name": "Zourunfa"
+  },
+  "keywords": ["slides", "presentation", "react", "tailwind", "ppt"]
+}
