@@ -169,6 +169,26 @@ Inform the user:
 5. Open browser to http://localhost:5173
 6. Mention keyboard shortcuts for navigation
 
+## Icon Validation
+
+**CRITICAL**: When dispatching subagents to generate slides, you must:
+
+1. Read `icon-reference.md` from the references directory
+2. Include the icon reference content in each subagent prompt
+3. Explicitly instruct subagents to **only use icons from the provided list**
+4. Common icon mistakes to avoid:
+   - ❌ `TestRocket` → ✅ `Rocket` or `Flask`
+   - ❌ Creating non-existent icon names
+   - ❌ Using icons not in the reference list
+
+**Subagent prompt must include**:
+```
+## Icon Reference (IMPORTANT: Only use icons from this list)
+[Copy icon list from icon-reference.md]
+```
+
+This prevents import errors like "does not provide an export named 'TestRocket'".
+
 ## Example Output Message
 
 ```
@@ -187,5 +207,15 @@ Keyboard shortcuts:
   Home/End: First/Last slide
   F: Toggle fullscreen
 ```
+
+## Important: Icon Validation
+
+After generating slides, ALWAYS run the validation script before starting the dev server:
+
+```bash
+node ../scripts/validate-icons.js src/slides/
+```
+
+This prevents import errors like "does not provide an export named 'TestRocket'".
 
 Begin generation when parameters are provided.
