@@ -1,9 +1,9 @@
 {
   "marketplace": {
-    "name": "af-claudecode-skill",
+    "name": "af-caludecode-skills",
     "version": "1.0.0",
     "description": "Claude Code Skills & Plugins Marketplace",
-    "repository": "https://github.com/<your-username>/af-claudecode-skill",
+    "repository": "https://github.com/Zourunfa/af-caludecode-skills",
     "plugins": [
       {
         "name": "slides-generator",
