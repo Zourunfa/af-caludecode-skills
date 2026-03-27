@@ -45,6 +45,164 @@ Extract the following parameters from the user request:
 - Font: Bold sans-serif
 - Style: Energetic with creative layouts
 
+### Tech Theme (NEW - For Architecture Diagrams)
+- Background: Deep tech gradient (linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%))
+- Text: White (#ffffff)
+- Accent: Neon cyan (#00f5ff) and Electric purple (#b026ff)
+- Font: JetBrains Mono / Consolas for code, system-ui for text
+- Style: High-tech with glowing effects, grid patterns, and animated connections
+- Special Features: Circuit patterns, particle effects, holographic elements
+
+## Animation & Graphics Enhancement
+
+### Mandatory Animation Libraries
+
+When generating slides with architecture diagrams, data visualization, or complex concepts, **MUST** include these libraries in `package.json`:
+
+```json
+{
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.344.0",
+    "react-flow-renderer": "^10.3.17",
+    "recharts": "^2.12.0",
+    "@react-three/fiber": "^8.16.0",
+    "@react-three/drei": "^9.105.0",
+    "three": "^0.163.0"
+  }
+}
+```
+
+### Animation Priority Rules
+
+**When to use animations:**
+1. **Architecture Diagrams** (ALWAYS use animations)
+   - Animated nodes appearing sequentially
+   - Connection lines drawing progressively
+   - Hover effects showing component details
+   - Interactive pan/zoom for complex diagrams
+   - Use `framer-motion` for layout animations + `react-flow-renderer` for node graphs
+
+2. **Data Visualization** (ALWAYS use animations)
+   - Animated charts (bars, lines, pies) with `recharts`
+   - Counting numbers for statistics
+   - Progress bars that fill on slide enter
+   - Staggered list item reveals
+
+3. **Concept Illustrations** (HIGH priority)
+   - 2D animations for process flows using `framer-motion`
+   - 3D models for spatial concepts using `@react-three/fiber`
+   - Particle effects for abstract concepts
+   - Morphing shapes for transformation concepts
+
+4. **Bullet Points** (Medium priority)
+   - Staggered fade-in (100ms delay between items)
+   - Slide-in from left/right
+   - Scale animation on hover
+
+### Architecture Diagram Components
+
+**MUST create these components for architecture slides:**
+
+1. **AnimatedFlowDiagram.jsx**
+   - Uses `react-flow-renderer` for node-based diagrams
+   - Animated edges drawing from source to target
+   - Interactive nodes with hover details
+   - Zoom/pan controls
+   - Auto-layout with hierarchical positioning
+
+2. **AnimatedArchitecture.jsx**
+   - Layer-by-layer reveal (infrastructure → services → application)
+   - Animated connection lines between layers
+   - Glowing pulse effects for active components
+   - Hover tooltips with component details
+   - Legend with animated entry
+
+3. **DataFlowAnimation.jsx**
+   - Animated particles flowing through connections
+   - Color-coded data types
+   - Speed controls for presentation pace
+   - Loop mode for continuous flow visualization
+
+### 3D Visualization Components
+
+**For spatial or structural concepts, use 3D:**
+
+1. **3DModelViewer.jsx** - Using `@react-three/fiber`
+   - Interactive 3D models (drag to rotate)
+   - Auto-rotate on idle
+   - Animated entry (scale + fade)
+   - Lighting effects for depth
+
+2. **3DArchitecture.jsx** - For system topology
+   - 3D node graph with depth layers
+   - Animated connections
+   - Mouse interaction for exploration
+   - Section cutaways for internal views
+
+### Animation Timing Guidelines
+
+- **Fast transitions**: 150-300ms (hover states, micro-interactions)
+- **Medium transitions**: 300-500ms (slide elements, standard reveals)
+- **Slow transitions**: 500-1000ms (complex diagrams, sequential builds)
+- **Stagger delays**: 50-150ms between list items
+- **Entry animations**: Stagger from top/bottom or center outward
+
+### High-End Animation Patterns
+
+**Use these patterns for professional, educational presentations:**
+
+1. **Progressive Disclosure** - Reveal information step-by-step
+   ```jsx
+   <motion.div
+     initial={{ opacity: 0, y: 20 }}
+     animate={{ opacity: 1, y: 0 }}
+     transition={{ delay: index * 0.1 }}
+   >
+     {content}
+   </motion.div>
+   ```
+
+2. **Path Drawing** - Draw lines/shapes progressively
+   ```jsx
+   <motion.path
+     d={pathData}
+     initial={{ pathLength: 0 }}
+     animate={{ pathLength: 1 }}
+     transition={{ duration: 2, ease: "easeInOut" }}
+   />
+   ```
+
+3. **Scale & Fade** - Elegant element reveals
+   ```jsx
+   initial={{ scale: 0.8, opacity: 0 }}
+   animate={{ scale: 1, opacity: 1 }}
+   transition={{ type: "spring", stiffness: 200 }}
+   ```
+
+4. **Staggered Grid** - Cards appearing in wave pattern
+   ```jsx
+   const container = {
+     hidden: { opacity: 0 },
+     show: {
+       opacity: 1,
+       transition: { staggerChildren: 0.1 }
+     }
+   };
+   ```
+
+### Content-Specific Animation Rules
+
+**For different slide types:**
+
+- **Title Slides**: Text reveal + subtle background motion
+- **Architecture Diagrams**: Sequential node reveals + animated connections
+- **Data Slides**: Animated charts + counting numbers
+- **Process Slides**: Step-by-step progression with path animations
+- **Comparison Slides**: Split-screen entry + synchronized reveals
+- **Timeline Slides**: Animated line drawing + milestone pop-ups
+- **Summary Slides**: Staggered bullet points + highlight animations
+
 ## Output Structure
 
 Create a new directory named based on the title (slugified) and generate:
