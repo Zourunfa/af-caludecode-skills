@@ -1,0 +1,9 @@
+{
+  "name": "video-creator",
+  "description": "AI-powered video creation and publishing workflow",
+  "version": "1.0.0",
+  "author": {
+    "name": "Zourunfa"
+  },
+  "keywords": ["video", "remotion", "subtitle", "publish", "教学视频"]
+}
