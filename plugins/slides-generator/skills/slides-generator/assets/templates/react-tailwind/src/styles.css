@@ -13,6 +13,18 @@ body {
   overflow: hidden;
 }
 
+/* Scrollable content area */
+.slide-content {
+  flex: 1;
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+}
+
 .slide-enter {
   animation: fadeIn 0.5s ease-out;
 }

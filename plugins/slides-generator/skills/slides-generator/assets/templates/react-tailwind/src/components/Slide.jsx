@@ -12,9 +12,15 @@ const Slide = ({ slide, theme, isActive }) => {
 
   return (
     <div
-      className={`slide-enter h-full w-full flex flex-col justify-center items-center p-8 md:p-16 ${baseClasses}`}
+      className={`slide-enter h-full w-full flex flex-col justify-center items-center p-8 md:p-16 ${baseClasses} relative`}
     >
-      <div className="max-w-5xl w-full space-y-8">
+      {/* Slide Number - Fixed Position */}
+      <div className="absolute bottom-8 right-8 text-sm opacity-60">
+        {slide.number}
+      </div>
+
+      <div className="max-w-5xl w-full h-full flex flex-col">
+        <div className="slide-content flex-1 space-y-4">
         {/* Slide Title */}
         <h1 className="text-4xl md:text-6xl font-bold animate-fade-in">
           {slide.title}
@@ -39,17 +45,13 @@ const Slide = ({ slide, theme, isActive }) => {
           </ul>
         )}
 
-        {/* Slide Number */}
-        <div className="absolute bottom-8 right-8 text-sm opacity-60">
-          {slide.number}
-        </div>
-
         {/* Author on Title Slide */}
         {slide.isTitle && slide.author && (
-          <p className="text-lg md:text-xl opacity-75 mt-12">
+          <p className="text-lg md:text-xl opacity-75 mt-8">
             {slide.author}
           </p>
         )}
+        </div>
       </div>
     </div>
   );

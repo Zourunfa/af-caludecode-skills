@@ -138,6 +138,26 @@ Each slide should have:
 - `content`: Main content paragraph
 - `bullets`: Array of 3-5 bullet points (optional)
 
+### Template-Specific Rules (react-tailwind template)
+
+For the react-tailwind template, follow these rules to prevent content cutoff:
+
+- **Maximum 4 bullets per slide** — If more than 4 bullets are needed, split into multiple slides
+- **Use space-y-3 or space-y-4** — Never use space-y-8 (causes content overflow)
+- **Wrap content in slide-content div** — Ensures scrollability when content exceeds viewport
+- **Keep text concise** — Maximum 80 characters per bullet point
+- **Use proper spacing** — `mt-8` for author on title slide (not `mt-12`)
+
+### Pre-Generation Checklist (MUST complete before writing code)
+
+Before generating any slide code, verify the following:
+
+□ **Bullets count ≤ 4** — If more than 4 bullets, split into multiple slides
+□ **Use space-y-3 or space-y-4** — NOT space-y-8
+□ **Wrap content area with slide-content class** — `<div className="slide-content flex-1 space-y-4">`
+□ **Text is concise** — Maximum 80 chars per bullet
+□ **Content layout uses flex** — `<div className="max-w-5xl w-full h-full flex flex-col">`
+
 ## Implementation Instructions
 
 1. Parse input parameters from user request
@@ -188,6 +208,27 @@ Inform the user:
 ```
 
 This prevents import errors like "does not provide an export named 'TestRocket'".
+
+### Content Validation Script (Optional)
+
+For generated projects using the react-tailwind template, a validation script is included to check for common content issues:
+
+```bash
+cd <project-name>
+node scripts/validate-slides.js
+```
+
+The script checks:
+- Bullets count per slide (max 4)
+- Spacing usage (should NOT use space-y-8)
+- Bullet point length (max 80 chars)
+
+Example output:
+```
+✓ Slide 01: bullets count OK (0)
+⚠ Slide 02: bullets count exceeds limit (6 > 4)
+  Suggestion: Split into two slides
+```
 
 ## Example Output Message
 
