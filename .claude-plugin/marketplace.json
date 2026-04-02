@@ -13,6 +13,13 @@
       "category": "development",
       "source": "./plugins/slides-generator",
       "homepage": "https://github.com/Zourunfa/af-caludecode-skills"
+    },
+    {
+      "name": "video-creator",
+      "description": "AI-powered video creation and publishing workflow. Triggers on keywords like 做视频, 教学视频, video, remotion, 字幕, 配音.",
+      "category": "productivity",
+      "source": "./plugins/video-creator",
+      "homepage": "https://github.com/Zourunfa/af-caludecode-skills"
     }
   ]
 }
